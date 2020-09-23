@@ -7,13 +7,15 @@ ip_address = socket.gethostbyname(hostname)
 
 print(ip_address)
 clients = []
-ip_port = 8080
+
+ip_port = int(input("Port: "))
+len_connections = int(input("Limit Connections: "))
 
 s.bind((ip_address, ip_port))
-s.listen(2)
+s.listen(len_connections)
 def add_conection():
     clients.append(s.accept())
-    print("+1 pessoa se conectou")
+    print("another customer connected")
     
 def send_message(_from, msg):
     for c in clients:

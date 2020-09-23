@@ -1,7 +1,10 @@
 import socket, threading
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(("192.168.1.108", 8080))
+ip_address = input("Host: ")
+ip_port = int(input("Port: "))
+
+s.connect((ip_address, ip_port))
 
 def send_message():
     msg = input()
