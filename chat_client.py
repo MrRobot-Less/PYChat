@@ -19,7 +19,7 @@ def recv_message():
 
 def connect():
     s.connect((ip_address, ip_port))
-    s.send(name.encode("utt-8"))
+    s.send(name.encode("utf-8"))
 
 if __name__ == '__main__':
     connect()
